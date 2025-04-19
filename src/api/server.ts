@@ -1,18 +1,7 @@
-type Login = {
-  id: string;
-  password: string;
-};
+import { LoginCredentials, LoginResponse } from '../store/types';
 
-type LoginResponse = {
-  success: boolean;
-  message: string;
-  data?: {
-    userId: string;
-    // 필요한 사용자 정보 추가 가능
-  };
-};
-
-export const login = ({ id, password }: Login): Promise<LoginResponse> => {
+// 로그인 API 함수
+export const login = ({ id, password }: LoginCredentials): Promise<LoginResponse> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (!id || !password) {

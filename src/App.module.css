@@ -1,59 +1,163 @@
 .container {
-  background-color: rgba(0, 255, 255, 0.226);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.loginContainer,
+.todoContainer {
+  width: 500px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 .title {
   text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.todoContainer {
-  width: 500px;
+/* 로그인 폼 스타일 */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.addTodo {
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formGroup label {
+  font-weight: bold;
+  color: #555;
+}
+
+.formGroup input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.loginButton {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.loginButton:hover {
+  background-color: #45a049;
+}
+
+.loginButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  color: #f44336;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.loginHint {
+  margin-top: 15px;
+  color: #888;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* 헤더 스타일 */
+.header {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   align-items: center;
   margin-bottom: 20px;
 }
 
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoutButton {
+  padding: 6px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logoutButton:hover {
+  background-color: #d32f2f;
+}
+
+/* 기존 투두리스트 스타일 */
+.addTodo {
+  display: flex;
+  margin-bottom: 20px;
+}
+
 .addTodo input {
-  margin-left: 16px;
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  font-size: 16px;
 }
 
 .addTodo button {
-  margin-right: 16px;
+  padding: 10px 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
 }
 
 .todolist {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-  margin: 0 16px;
+  list-style-type: none;
+  padding: 0;
 }
 
 .todo {
   display: flex;
   justify-content: space-between;
-
-  padding: 8px 0;
-  border: 1px solid black;
-  border-radius: 10px;
-}
-
-.todo span {
-  margin-left: 16px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .todo button {
-  margin-right: 16px;
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item {
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.completed .item {
+  text-decoration: line-through;
+  color: #888;
 }
